@@ -278,9 +278,9 @@ def main(workbook_path: Path):
                 "decisionIds": ["D075", "D091"],
             },
             {
-                "type": "source conflict resolved by student",
+                "type": "case evidence conflict",
                 "title": "Event Things supplier balance",
-                "detail": by_id["D013"].get("studentReasoning", ""),
+                "detail": "File 06 lists EUR 59,000 unpaid for Event Things Europe and says supplier balances are independently confirmed. The bank export shows EUR 100,000 paid against the EUR 114,000 invoice, implying EUR 14,000 unpaid. The student certified EUR 14,000 in D013/D063/D084. The conflict remains visible for review; no answer has been changed. Student basis: " + by_id["D013"].get("studentReasoning", ""),
                 "decisionIds": ["D013", "D063", "D084"],
             },
             {

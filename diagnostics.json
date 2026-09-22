@@ -72,9 +72,9 @@
       ]
     },
     {
-      "type": "source conflict resolved by student",
+      "type": "case evidence conflict",
       "title": "Event Things supplier balance",
-      "detail": "Bank shows one payment of 100000 eur to Event Things Europe 31 Aug, ref SUP-EVT, no other payment to this supplier anywhere in the bank export. 06 Purchases invoice is 114000 eur. The 59000 eur unpaid note in 06 is not third party confirmed, it contradicts the bank, so 114000 minus 100000 paid equals 14000 eur unpaid.",
+      "detail": "File 06 lists EUR 59,000 unpaid for Event Things Europe and says supplier balances are independently confirmed. The bank export shows EUR 100,000 paid against the EUR 114,000 invoice, implying EUR 14,000 unpaid. The student certified EUR 14,000 in D013/D063/D084. The conflict remains visible for review; no answer has been changed. Student basis: Bank shows one payment of 100000 eur to Event Things Europe 31 Aug, ref SUP-EVT, no other payment to this supplier anywhere in the bank export. 06 Purchases invoice is 114000 eur. The 59000 eur unpaid note in 06 is not third party confirmed, it contradicts the bank, so 114000 minus 100000 paid equals 14000 eur unpaid.",
       "decisionIds": [
         "D013",
         "D063",
