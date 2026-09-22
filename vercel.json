@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/review", "destination": "/review/index.html" }
+  ],
+  "headers": [
+    { "source": "/submission.json", "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }] }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "sourceWorkbook": "DPI-HT-01_Master_Decision_Tracker.xlsx",
+  "sourceSha256": "4eaa6ab3cf9b40a9617f6bbd714ff320d2430721663b64475cbe3bdbaa4aac2d",
+  "schemaValid": true,
+  "decisionCount": 100,
+  "materialJudgmentCount": 25,
+  "reconciliationChecks": [
+    {
+      "name": "Balance sheet",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Cash roll-forward",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Cash on balance sheet",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Cash versus bank export",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Supplier cash versus bank export",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Equity roll-forward",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Revenue and receivables",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Inventory roll-forward",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "PPE net",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Debt principal",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Interest payable",
+      "difference": 0,
+      "passed": true
+    }
+  ],
+  "reviewFlags": [
+    {
+      "type": "unresolved uncertainty",
+      "title": "Inventory count and roll-forward differ",
+      "detail": "Inventory & COGS schedule row 44: 80,000 opening + 459,000 purchases - 405,000 COGS - 22,000 write-down = 112,000 closing (D048/D075/D086). Physical count shows 121,000; the 9,000 eur gap is not recognised and is disclosed as an open item (see D075/D091).",
+      "decisionIds": [
+        "D075",
+        "D091"
+      ]
+    },
+    {
+      "type": "source conflict resolved by student",
+      "title": "Event Things supplier balance",
+      "detail": "Bank shows one payment of 100000 eur to Event Things Europe 31 Aug, ref SUP-EVT, no other payment to this supplier anywhere in the bank export. 06 Purchases invoice is 114000 eur. The 59000 eur unpaid note in 06 is not third party confirmed, it contradicts the bank, so 114000 minus 100000 paid equals 14000 eur unpaid.",
+      "decisionIds": [
+        "D013",
+        "D063",
+        "D084"
+      ]
+    },
+    {
+      "type": "agent disagreement and student override",
+      "title": "Approval of corrected accounts",
+      "detail": "Management's deck claims profit 312000 eur and cash 186000 eur, both contradicting the bank and resting on undelivered deposits, a loan booked as income, and omitted write-offs. Corrected profit is 65000 eur and corrected cash 60000 eur, both agreeing with the bank and its independent confirmation (247000 eur and 126000 eur below management's claims). Agent 1 proposed withholding approval until the 45000 eur supplier gap, 9000 eur inventory gap and missing insurance were resolved; the 45000 eur supplier gap is already resolved in D013 (Event Things Europe unpaid is 14000 eur, not 59000 eur), leaving only the 9000 eur inventory gap and missing insurance as genuinely open, so I approve with those two disclosed rather than blocking on them. Corrected balance sheet totals: assets 531000 eur, liabilities 361000 eur, equity 170000 eur - not 406000/125000 as the agents originally computed, because that figure assumed a 45000 eur opening supplier payable that does not exist once D013 is applied. Working from opening balances (cash 80000 + receivables 35000 + inventory 80000 + PPE net 135000 = 330000 opening assets; loan 100000 + payroll payable 15000 + supplier payable 0 = 115000 opening liabilities), opening equity is 215000 eur, not 170000 eur. Closing equity = 215000 + 65000 profit - 110000 distributions = 170000 eur. Closing liabilities = 81000 supplier + 32000 payroll + 25000 legal + 2000 interest + 131000 loan + 90000 deposits = 361000 eur. 531000 = 361000 + 170000, balances.",
+      "decisionIds": [
+        "D091"
+      ]
+    },
+    {
+      "type": "evidence index lookup",
+      "title": "Some entered Evidence IDs have no automatic filename",
+      "detail": "The workbook's Evidence Index contains labels outside its dropdown mapping. They are displayed unchanged; review these rows against the case files.",
+      "rows": [
+        {
+          "row": 28,
+          "evidenceId": "10 Email and Whatsapp dump"
+        },
+        {
+          "row": 33,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 35,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 37,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 39,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 41,
+          "evidenceId": "07 Payroll Bonuses Contractors"
+        },
+        {
+          "row": 43,
+          "evidenceId": "08 Assets Repairs Leases Maybe"
+        },
+        {
+          "row": 48,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 49,
+          "evidenceId": "08 Assets Repairs Leases Maybe"
+        },
+        {
+          "row": 51,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 52,
+          "evidenceId": "08 Assets Repairs Leases Maybe"
+        },
+        {
+          "row": 54,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 55,
+          "evidenceId": "08 Assets Repairs Leases Maybe"
+        },
+        {
+          "row": 57,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 58,
+          "evidenceId": "01 Management figures"
+        },
+        {
+          "row": 59,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        },
+        {
+          "row": 61,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 62,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 64,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 65,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 67,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 68,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        },
+        {
+          "row": 70,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 71,
+          "evidenceId": "07 Payroll Bonuses Contractors"
+        },
+        {
+          "row": 72,
+          "evidenceId": "02 Bank; 01 Management figures; 06 Purchases Invoices and Goods Received; 07 Payroll Bonuses Contractors; 08 Assets Repairs Leases Maybe; 09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 73,
+          "evidenceId": "05 Warehouse Count Marta Notes"
+        },
+        {
+          "row": 74,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 75,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        },
+        {
+          "row": 77,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 78,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        },
+        {
+          "row": 79,
+          "evidenceId": "09 Loans Owner Card and Legal Problems"
+        },
+        {
+          "row": 80,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 81,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        },
+        {
+          "row": 82,
+          "evidenceId": "06 Purchases Invoices and Goods Received"
+        },
+        {
+          "row": 83,
+          "evidenceId": "05 Warehouse Count Marta Notes"
+        },
+        {
+          "row": 84,
+          "evidenceId": "01 Management figures"
+        },
+        {
+          "row": 85,
+          "evidenceId": "07 Payroll Bonuses Contractors"
+        },
+        {
+          "row": 86,
+          "evidenceId": "05 Warehouse Count Marta Notes"
+        },
+        {
+          "row": 87,
+          "evidenceId": "11 Evidence Received After Takeover"
+        },
+        {
+          "row": 88,
+          "evidenceId": "10 Email and Whatsapp Dump"
+        }
+      ]
+    }
+  ],
+  "lowConfidenceDecisionIds": [
+    "D013",
+    "D014",
+    "D015",
+    "D016",
+    "D017",
+    "D018",
+    "D019",
+    "D020",
+    "D021",
+    "D034",
+    "D060",
+    "D078"
+  ],
+  "studentOverrideIds": [
+    "D038",
+    "D063",
+    "D084",
+    "D091",
+    "D094",
+    "D098",
+    "D099"
+  ],
+  "agentDisagreementIds": [
+    "D091"
+  ]
+}

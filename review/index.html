@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent AI positions and student certification for the 25 material judgments.">
+  <meta name="theme-color" content="#13263b">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <title>DPI-HT-01 | AI review trail</title>
+</head>
+<body data-page="review">
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="DPI-HT-01 home"><span class="brand-mark">DPI</span><span>HT-01 <small>Financial case review</small></span></a><nav class="top-nav" aria-label="Main navigation"><a href="/">Case review</a><a class="active" href="/review">AI review trail</a><a href="/submission.json">Submission JSON</a></nav></div></header>
+  <main class="shell">
+    <section class="intro"><div><p class="eyebrow">25 material judgments</p><h1>AI review trail</h1><p class="lead">Both independent proposals, the student's certified answer, reasoning, financial effect, and evidence are kept together for review.</p></div><div class="student-box"><span>Certified by</span><strong id="student-name">Loading…</strong><small id="student-id"></small></div></section>
+    <div id="load-error" class="alert error" hidden></div>
+    <section id="review-summary" class="summary-grid" aria-label="Review summary"></section>
+    <section class="section" id="review-attention"><div class="section-head"><div><p class="eyebrow">Needs attention</p><h2>Disagreements, overrides, and uncertainty</h2></div></div><div id="attention-list" class="flag-grid"></div><div class="low-confidence"><h3>Low-confidence decisions</h3><p id="low-confidence-list"></p></div></section>
+    <section class="section" id="judgments"><div class="section-head"><div><p class="eyebrow">D041–D100 · material tier only</p><h2>Judgment records</h2></div><span id="judgment-count" class="count"></span></div><label class="search-wide">Search judgments<input id="judgment-search" type="search" placeholder="ID, topic, proposal, final answer"></label><div id="judgment-list" class="judgment-list"></div></section>
+  </main>
+  <footer class="site-footer"><span>DPI-HT-01 · Reporting date 31 August 2026</span><span>Source: certified decision tracker</span></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

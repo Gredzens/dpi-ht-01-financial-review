@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DPI-HT-01 certified financial reconstruction and evidence review.">
+  <meta name="theme-color" content="#13263b">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <title>DPI-HT-01 | Certified case review</title>
+</head>
+<body data-page="main">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="DPI-HT-01 home"><span class="brand-mark">DPI</span><span>HT-01 <small>Financial case review</small></span></a>
+      <nav class="top-nav" aria-label="Main navigation"><a class="active" href="/">Case review</a><a href="/review">AI review trail</a><a href="/submission.json">Submission JSON</a></nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div><p class="eyebrow">31 August 2026 · EUR</p><h1>Certified financial reconstruction</h1><p class="lead">Divorce Party International Ltd. Evidence, decisions, statements, and the board response from the student's completed tracker.</p></div>
+      <div class="student-box"><span>Certified by</span><strong id="student-name">Loading…</strong><small id="student-id"></small></div>
+    </section>
+    <div id="load-error" class="alert error" hidden></div>
+    <section id="summary" class="summary-grid" aria-label="Key figures"></section>
+    <nav class="section-nav" aria-label="Sections"><a href="#statements">Statements</a><a href="#reconciliations">Reconciliations</a><a href="#decisions">100 decisions</a><a href="#schedules">Schedules</a><a href="#evidence">Evidence</a><a href="#uncertainties">Uncertainties</a><a href="#board">Board recommendation</a></nav>
+    <section class="section" id="review-flags"><div class="section-head"><div><p class="eyebrow">Review before publication</p><h2>Open points and source conflicts</h2></div><a class="text-link" href="/review">See AI review trail →</a></div><div id="flags-list" class="flag-grid"></div></section>
+    <section class="section" id="statements"><div class="section-head"><div><p class="eyebrow">Approved figures in tracker</p><h2>Three statements</h2></div></div><div id="statement-tabs" class="tab-list" role="tablist" aria-label="Financial statements"></div><div id="statement-panel" class="statement-panel"></div></section>
+    <section class="section" id="reconciliations"><div class="section-head"><div><p class="eyebrow">Workbook and numeric checks</p><h2>Reconciliations</h2></div></div><div id="recon-list" class="recon-grid"></div></section>
+    <section class="section" id="decisions"><div class="section-head"><div><p class="eyebrow">D001–D100</p><h2>Certified decisions</h2></div><span id="decision-count" class="count"></span></div><div class="filters"><label>Search decisions<input id="decision-search" type="search" placeholder="ID, question, answer, or evidence"></label><label>Review tier<select id="tier-filter"><option value="all">All tiers</option><option value="operational">Operational</option><option value="material_judgment">Material judgment</option></select></label><label>Confidence<select id="confidence-filter"><option value="all">All levels</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label></div><div id="decision-list" class="decision-list"></div></section>
+    <section class="section" id="schedules"><div class="section-head"><div><p class="eyebrow">Transaction and balance detail</p><h2>Supporting schedules</h2></div></div><div id="schedule-groups" class="schedule-groups"></div></section>
+    <section class="section" id="evidence"><div class="section-head"><div><p class="eyebrow">Student Evidence Index</p><h2>Evidence register</h2></div><span id="evidence-count" class="count"></span></div><p class="section-note">Source labels, record notes, and contradictions are shown as entered. A suggested case file is marked when the workbook's filename lookup has no result.</p><label class="search-wide">Search evidence<input id="evidence-search" type="search" placeholder="Source, location, support, or decision ID"></label><div id="evidence-list" class="evidence-list"></div></section>
+    <section class="section" id="uncertainties"><div class="section-head"><div><p class="eyebrow">Recorded judgment limits</p><h2>Uncertainties</h2></div></div><div id="uncertainty-list" class="card-grid"></div></section>
+    <section class="section" id="board"><div class="section-head"><div><p class="eyebrow">D091–D100</p><h2>Board recommendation</h2></div></div><div id="board-list" class="board-list"></div></section>
+  </main>
+  <footer class="site-footer"><span>DPI-HT-01 · Reporting date 31 August 2026</span><span>Source: certified decision tracker</span></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
