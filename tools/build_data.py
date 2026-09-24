@@ -155,7 +155,7 @@ def main(workbook_path: Path):
         })
 
     reconciliations = []
-    for row, values in rows(statements_sheet, 79, 85, 6):
+    for row, values in rows(statements_sheet, 79, 86, 6):
         if not text(values[1]):
             continue
         reconciliations.append({
@@ -255,6 +255,7 @@ def main(workbook_path: Path):
         {"name": "Cash on balance sheet", "difference": amounts["Closing cash (31 Aug 2026)"] - amounts["Cash"]},
         {"name": "Cash versus bank export", "difference": amounts["Closing cash (31 Aug 2026)"] - bank_closing_cash},
         {"name": "Supplier cash versus bank export", "difference": -amounts["Cash paid to suppliers"] - supplier_bank_payments},
+        {"name": "Supplier payable roll-forward", "difference": 45000 + 459000 - supplier_bank_payments - amounts["Trade payables - suppliers"]},
         {"name": "Equity roll-forward", "difference": amounts["Opening equity (1 Jan 2026, derived from opening balances)"] + amounts["Net profit for the period"] + amounts["Owner distributions"] - amounts["Total equity"]},
         {"name": "Revenue and receivables", "difference": 35000 + amounts["Revenue - delivered sales"] - amounts["Cash collected from customers (sales and opening receivables)"] + amounts["Bad debt write-off - customer R-17"] - amounts["Trade receivables, net of write-off"]},
         {"name": "Inventory roll-forward", "difference": 80000 + 459000 + amounts["Cost of goods sold - materials"] + amounts["Inventory write-down - damaged basement stock"] - amounts["Inventory"]},
@@ -278,9 +279,9 @@ def main(workbook_path: Path):
                 "decisionIds": ["D075", "D091"],
             },
             {
-                "type": "case evidence conflict",
-                "title": "Event Things supplier balance",
-                "detail": "File 06 lists EUR 59,000 unpaid for Event Things Europe and says supplier balances are independently confirmed. The bank export shows EUR 100,000 paid against the EUR 114,000 invoice, implying EUR 14,000 unpaid. The student certified EUR 14,000 in D013/D063/D084. The conflict remains visible for review; no answer has been changed. Student basis: " + by_id["D013"].get("studentReasoning", ""),
+                "type": "opening balance inference",
+                "title": "Supplier payable roll-forward corrected",
+                "detail": "Closing supplier payables are EUR 126,000 as independently confirmed in file 06. Purchases less payments, EUR 81,000, is the increase in debt. The opening payable is inferred as EUR 45,000 so that EUR 45,000 + EUR 459,000 - EUR 378,000 = EUR 126,000. The opening ledger was not supplied. Student basis: " + by_id["D084"].get("studentReasoning", ""),
                 "decisionIds": ["D013", "D063", "D084"],
             },
             {

@@ -1,6 +1,6 @@
 {
   "sourceWorkbook": "DPI-HT-01_Master_Decision_Tracker.xlsx",
-  "sourceSha256": "4eaa6ab3cf9b40a9617f6bbd714ff320d2430721663b64475cbe3bdbaa4aac2d",
+  "sourceSha256": "148ba2f9cfdb9de191d4acd09591f3c70a96107a1dcc6f94fd41e611d2d40d7d",
   "schemaValid": true,
   "decisionCount": 100,
   "materialJudgmentCount": 25,
@@ -27,6 +27,11 @@
     },
     {
       "name": "Supplier cash versus bank export",
+      "difference": 0,
+      "passed": true
+    },
+    {
+      "name": "Supplier payable roll-forward",
       "difference": 0,
       "passed": true
     },
@@ -72,9 +77,9 @@
       ]
     },
     {
-      "type": "case evidence conflict",
-      "title": "Event Things supplier balance",
-      "detail": "File 06 lists EUR 59,000 unpaid for Event Things Europe and says supplier balances are independently confirmed. The bank export shows EUR 100,000 paid against the EUR 114,000 invoice, implying EUR 14,000 unpaid. The student certified EUR 14,000 in D013/D063/D084. The conflict remains visible for review; no answer has been changed. Student basis: Bank shows one payment of 100000 eur to Event Things Europe 31 Aug, ref SUP-EVT, no other payment to this supplier anywhere in the bank export. 06 Purchases invoice is 114000 eur. The 59000 eur unpaid note in 06 is not third party confirmed, it contradicts the bank, so 114000 minus 100000 paid equals 14000 eur unpaid.",
+      "type": "opening balance inference",
+      "title": "Supplier payable roll-forward corrected",
+      "detail": "Closing supplier payables are EUR 126,000 as independently confirmed in file 06. Purchases less payments, EUR 81,000, is the increase in debt. The opening payable is inferred as EUR 45,000 so that EUR 45,000 + EUR 459,000 - EUR 378,000 = EUR 126,000. The opening ledger was not supplied. Student basis: 06 Purchases reports independently confirmed closing supplier balances of 25000 + 28000 + 14000 + 59000 = 126000 eur. 02 Bank shows supplier payments of 105000 + 92000 + 81000 + 100000 = 378000 eur, while current purchases are 459000 eur. Purchases less payments, 81000 eur, is the increase in debt. The missing opening supplier ledger is resolved by inference: 126000 closing - 459000 purchases + 378000 payments = 45000 opening payables.",
       "decisionIds": [
         "D013",
         "D063",
@@ -84,7 +89,7 @@
     {
       "type": "agent disagreement and student override",
       "title": "Approval of corrected accounts",
-      "detail": "Management's deck claims profit 312000 eur and cash 186000 eur, both contradicting the bank and resting on undelivered deposits, a loan booked as income, and omitted write-offs. Corrected profit is 65000 eur and corrected cash 60000 eur, both agreeing with the bank and its independent confirmation (247000 eur and 126000 eur below management's claims). Agent 1 proposed withholding approval until the 45000 eur supplier gap, 9000 eur inventory gap and missing insurance were resolved; the 45000 eur supplier gap is already resolved in D013 (Event Things Europe unpaid is 14000 eur, not 59000 eur), leaving only the 9000 eur inventory gap and missing insurance as genuinely open, so I approve with those two disclosed rather than blocking on them. Corrected balance sheet totals: assets 531000 eur, liabilities 361000 eur, equity 170000 eur - not 406000/125000 as the agents originally computed, because that figure assumed a 45000 eur opening supplier payable that does not exist once D013 is applied. Working from opening balances (cash 80000 + receivables 35000 + inventory 80000 + PPE net 135000 = 330000 opening assets; loan 100000 + payroll payable 15000 + supplier payable 0 = 115000 opening liabilities), opening equity is 215000 eur, not 170000 eur. Closing equity = 215000 + 65000 profit - 110000 distributions = 170000 eur. Closing liabilities = 81000 supplier + 32000 payroll + 25000 legal + 2000 interest + 131000 loan + 90000 deposits = 361000 eur. 531000 = 361000 + 170000, balances.",
+      "detail": "Management's deck claims profit 312000 eur and cash 186000 eur, both contradicted by stronger evidence. The corrected balance sheet has assets 531000 eur, liabilities 406000 eur and equity 125000 eur. Supplier payables close at the independently confirmed 126000 eur. Since current purchases of 459000 eur less payments of 378000 eur increase supplier debt by 81000 eur, an opening payable of 45000 eur is inferred: 45000 + 459000 - 378000 = 126000. Opening assets are 330000 eur and opening liabilities are 160000 eur (loan 100000, payroll payable 15000 and inferred supplier payable 45000), so opening equity is 170000 eur. Closing equity is 170000 + 65000 profit - 110000 distributions = 125000 eur. Closing liabilities are 126000 supplier + 32000 payroll + 25000 legal + 2000 interest + 131000 loan + 90000 deposits = 406000 eur. The remaining disclosed points are the 9000 eur inventory gap and missing insurance data.",
       "decisionIds": [
         "D091"
       ]
@@ -258,7 +263,6 @@
     }
   ],
   "lowConfidenceDecisionIds": [
-    "D013",
     "D014",
     "D015",
     "D016",
@@ -272,9 +276,6 @@
     "D078"
   ],
   "studentOverrideIds": [
-    "D038",
-    "D063",
-    "D084",
     "D091",
     "D094",
     "D098",
